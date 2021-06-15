@@ -3,15 +3,14 @@ class Snake:
     body = []
     head = []
     tail = []
-    step = 0
-    depth = 0
+    board=[]
 
-    def __init__(self,body,depth):
+    def __init__(self,body, board):
         self.body = body
-        self.depth = depth
         self.head = self.body[0]
         self.tail = self.body[-1]
-        print(self.body)
+        self.board=board
+
 
     def getHead(self):
         return self.head
@@ -59,6 +58,7 @@ class Snake:
         self.body.insert(0,self.head)
         self.body.pop(-1)
         self.tail = self.body[-1]
+        #print(self.body)
 
     def intersection(self,next):
         if next==self.tail:
@@ -67,4 +67,9 @@ class Snake:
             return next in self.body
 
     def crossBoard(self,next):
-        return -1 in next       
+        if -1 in next:
+            return True
+        elif next[0]>self.board[0] or next[1]>self.board[1] :
+            return True
+        else:
+            return False
