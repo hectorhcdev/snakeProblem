@@ -12,6 +12,8 @@ class SnakePath:
         self.step=0
         self.path=[]
 
+
+    #Try to move the path left
     def left(self):
         if self.checkDepth():
             return False
@@ -22,6 +24,7 @@ class SnakePath:
         else:
             return False
 
+    #Try to move the path right
     def right(self):
         if self.checkDepth():
             return False
@@ -32,6 +35,7 @@ class SnakePath:
         else:
             return False
 
+    #Try to move the path up
     def up(self):
         if self.checkDepth():
             return False
@@ -42,6 +46,7 @@ class SnakePath:
         else:
             return False
 
+    #Try to move the path down
     def down(self):
         if self.checkDepth():
             return False
@@ -51,12 +56,16 @@ class SnakePath:
             return True
         else:
             return False
+
+    #Check that the steps are not greater than the depth
     def checkDepth(self):
         #print(self.depth)
         return len(self.path)+1>self.depth
 
+    #Increase the numbers of steps
     def stepIncrease(self):
         self.step=len(self.path)
 
+    #Return the actual step
     def getStep(self):
         return self.step

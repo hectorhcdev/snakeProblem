@@ -1,4 +1,3 @@
-from snake import Snake
 from findPaths import FindPaths
 class Test:
 
