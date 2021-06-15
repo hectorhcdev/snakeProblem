@@ -9,6 +9,8 @@ class SnakePath:
     def __init__(self,depth,snake):
         self.depth=depth
         self.snake=snake
+        self.step=0
+        self.path=[]
 
     def left(self):
         if self.checkDepth():

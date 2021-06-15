@@ -69,7 +69,7 @@ class Snake:
     def crossBoard(self,next):
         if -1 in next:
             return True
-        elif next[0]>self.board[0] or next[1]>self.board[1] :
+        elif next[0]>=self.board[0] or next[1]>=self.board[1] :
             return True
         else:
             return False
